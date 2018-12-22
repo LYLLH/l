@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>9</title>
+	<script type="text/javascript">
+		var xhr;
+		//创建异步对象
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			xhr = ActiveXObject("Microft.XMLHttp");
+		};
+		var xhr = new XMLHttpRequest();
+		xhr.open("get","http://mock-api.com/4jzA4LKk.mock/request",true);
+		xhr.send();
+		xhr.onreadyStatechange = function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var x = XHR.responseText;//需要被解析
+				var a = JSON.parse(x);
+			}
+		};
+		console.log(xhr);
+		document.getElementById('dv').innerHTML =a.img + '姓名 ：'+ a.name + '学号：'+a.number + '就读学校：' + a.university + '学院：' + a.college + '寝室号：' + a.dorm + '学习课程：' + a.subject
+	</script>
+</head>
+<body>
+	<div id = "dv";></div>
+</body>
+</html>
